@@ -308,20 +308,15 @@ img{max-width:100%;height:auto;display:block}
   }
 }
 
-/* ✅ Popravak prikaza naslova i opisa u galeriji (mobilni uređaji) */
-@media (max-width: 768px) {
-  main h1,
-  main p {
-    display: block;
-    width: 100%;
-    text-align: center;
+/* ---------- HERO NASLOV I OPIS NA MOBITELU ---------- */
+@media (max-width:768px){
+  .hero h1,
+  .hero .slogan{
+    display:block;
+    width:100%;
+    text-align:center;
+    margin:0 auto;
   }
-  main h1 {
-    font-size: 26px;
-    margin-bottom: 8px;
-  }
-  main p {
-    font-size: 16px;
-    margin-bottom: 16px;
-  }
+  .hero h1{font-size:26px;margin-bottom:8px}
+  .hero .slogan{font-size:16px;margin-bottom:16px}
 }
