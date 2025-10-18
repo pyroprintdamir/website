@@ -292,6 +292,7 @@ img{max-width:100%;height:auto;display:block}
   .gallery-grid{grid-template-columns:repeat(2,1fr)}
   .nav a{display:block;margin:10px 0}
 }
+
 @media (max-width:560px){
   .gallery-grid{grid-template-columns:1fr}
   .nav{display:none}
@@ -305,8 +306,9 @@ img{max-width:100%;height:auto;display:block}
     border-radius:8px;
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
   }
-} 
-   /* Popravak prikaza naslova i opisa u galeriji (mobilni uređaji) */
+}
+
+/* ✅ Popravak prikaza naslova i opisa u galeriji (mobilni uređaji) */
 @media (max-width: 768px) {
   main h1,
   main p {
