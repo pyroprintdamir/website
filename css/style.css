@@ -305,6 +305,7 @@ img{max-width:100%;height:auto;display:block}
     border-radius:8px;
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
   }
+} 
    /* Popravak prikaza naslova i opisa u galeriji (mobilni uređaji) */
 @media (max-width: 768px) {
   main h1,
@@ -321,5 +322,4 @@ img{max-width:100%;height:auto;display:block}
     font-size: 16px;
     margin-bottom: 16px;
   }
-}
 }
