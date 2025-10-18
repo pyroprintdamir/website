@@ -4,6 +4,7 @@
 ====================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
+
   /* ---------- HAMBURGER MENI ---------- */
   const navToggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".nav");
@@ -28,32 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ---------- LIGHTBOX ---------- */
-  const lightbox = document.createElement("div");
-  lightbox.classList.add("lightbox");
-  document.body.appendChild(lightbox);
-
-  const lbImage = document.createElement("img");
-  lbImage.classList.add("lb-image");
-  lightbox.appendChild(lbImage);
-
-  const lbCaption = document.createElement("div");
-  lbCaption.classList.add("lb-caption");
-  lightbox.appendChild(lbCaption);
-
-  const lbClose = document.createElement("button");
-  lbClose.classList.add("lb-close");
-  lbClose.innerHTML = "&times;";
-  lightbox.appendChild(lbClose);
-
-  const lbPrev = document.createElement("button");
-  lbPrev.classList.add("lb-prev");
-  lbPrev.innerHTML = "&#10094;";
-  lightbox.appendChild(lbPrev);
-
-  const lbNext = document.createElement("button");
-  lbNext.classList.add("lb-next");
-  lbNext.innerHTML = "&#10095;";
-  lightbox.appendChild(lbNext);
+  const lightbox = document.getElementById("lightbox");
+  const lbImage = document.getElementById("lbImage");
+  const lbCaption = document.getElementById("lbCaption");
+  const lbClose = document.getElementById("lbClose");
+  const lbPrev = document.getElementById("lbPrev");
+  const lbNext = document.getElementById("lbNext");
 
   const galleryItems = document.querySelectorAll(".gallery-item");
   let currentIndex = 0;
@@ -80,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     openLightbox(currentIndex);
   }
 
+  // Klik na slike galerije
   galleryItems.forEach((item, index) => {
     item.addEventListener("click", (e) => {
       e.preventDefault();
@@ -87,19 +69,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Gumbi Lightbox
   lbClose.addEventListener("click", closeLightbox);
   lbNext.addEventListener("click", showNext);
   lbPrev.addEventListener("click", showPrev);
 
+  // Klik izvan slike zatvara Lightbox
   lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) closeLightbox();
   });
 
-  /* ---------- ESC KEY ZA ZATVARANJE ---------- */
+  // Tipke tipkovnice
   document.addEventListener("keydown", (e) => {
     if (!lightbox.classList.contains("open")) return;
     if (e.key === "Escape") closeLightbox();
     if (e.key === "ArrowRight") showNext();
     if (e.key === "ArrowLeft") showPrev();
   });
+
 });
