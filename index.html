@@ -3,33 +3,64 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <!-- SEO osnovno -->
   <title>Pyroprint Damir – Lasersko graviranje, 3D drvene karte i personalizirani pokloni</title>
   <meta name="description" content="Pyroprint Damir – profesionalno lasersko graviranje, izrada 3D drvenih karata, personaliziranih poklona i suvenira. Unikatni proizvodi izrađeni s pažnjom i preciznošću.">
-  <meta name="keywords" content="lasersko graviranje, 3D drvene karte, personalizirani pokloni, suveniri, unikatni pokloni,graviranje metala, graviranje čaša,drvene karte,drveni satovi,3d satovi,privjesci sa qr codom, gravura, graviranje drva, Pyroprint Damir, pokloni po narudžbi, darovi, graviranje poklona">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph (za Facebook, Instagram, WhatsApp, Viber, LinkedIn...) -->
+  <!-- OG / Twitter -->
   <meta property="og:title" content="Pyroprint Damir – Lasersko graviranje i 3D drvene karte">
-  <meta property="og:description" content="Izrada unikatnih 3D drvenih karata, personaliziranih poklona i suvenira. Kvalitetno lasersko graviranje za svaku prigodu.">
+  <meta property="og:description" content="Izrada unikatnih 3D drvenih karata, personaliziranih poklona i suvenira.">
   <meta property="og:url" content="https://pyroprintdamir.hr">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://pyroprintdamir.hr/images/seo slika.jpg"> <!-- zamijeni slikom proizvoda -->
-
-  <!-- Twitter Card (koriste i Telegram, Slack, Viber...) -->
+  <meta property="og:image" content="https://pyroprintdamir.hr/images/seo slika.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Pyroprint Damir – Lasersko graviranje i 3D drvene karte">
-  <meta name="twitter:description" content="Personalizirani pokloni, suveniri i 3D drvene karte izrađene s pažnjom i preciznošću.">
-  <meta name="twitter:image" content="https://pyroprintdamir.hr/images/seo slika.jpg"> <!-- ista slika kao gore -->
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Preload hero slika -->
+  <link rel="preload" as="image" href="images/sample1.webp">
 
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Fonts (asinhrono) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- Kritični CSS -->
+  <style>
+  :root{
+    --primary:#6A89A7;--secondary:#88BDF2;--accent:#BDDDFC;
+    --dark:#384959;--bg:#ffffff;--muted:#6b7280;--max-w:1100px
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Poppins',system-ui,-apple-system,Arial;background:var(--bg);color:var(--dark);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .container{max-width:var(--max-w);margin:0 auto;padding:24px}
+  .site-header{background:var(--bg);position:sticky;top:0;z-index:50;box-shadow:0 2px 8px rgba(56,73,89,0.06)}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--dark)}
+  .logo{width:64px;height:64px;border-radius:10px;object-fit:contain;padding:6px}
+  .brand-text{font-weight:700;font-size:18px}
+  .slogan-small{font-size:12px;color:var(--muted)}
+  .nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-weight:600}
+  .hero{padding:48px 0;display:flex;align-items:center;gap:32px;border-bottom:1px solid rgba(56,73,89,0.04)}
+  .hero-inner{display:flex;gap:32px;align-items:center;justify-content:space-between}
+  .hero-text h1{font-size:38px;margin:0;color:var(--primary)}
+  .slogan{color:var(--secondary);font-weight:700;margin-bottom:10px}
+  .lead{color:var(--muted);margin-bottom:18px}
+  .hero-image img{width:420px;max-width:40vw;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,0.06)}
+  .cta{display:inline-block;padding:12px 18px;border-radius:14px;text-decoration:none;font-weight:700;cursor:pointer}
+  .btn-primary{background:linear-gradient(180deg,var(--primary),var(--secondary));color:#fff;border:none}
+  .btn-outline{background:transparent;color:var(--primary);border:2px solid var(--secondary)}
+  @media (max-width:900px){
+    .hero-inner{flex-direction:column-reverse;text-align:center}
+    .hero-image img{max-width:80vw}
+  }
+  </style>
+
+  <!-- Glavni CSS (asinhrono) -->
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+
   <link rel="icon" href="images/favicon.png">
 </head>
+
 <body>
   <header class="site-header">
     <div class="container header-inner">
@@ -54,43 +85,34 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-text">
-          <h1 class="font-playfair" style="margin:0">PyroprintDamir</h1>
-          <p class="slogan font-poppins">Od ideje do uspomene</p>
-          <p class="lead font-roboto">Lasersko graviranje i rezanje drva — izrada suvenira i personaliziranih poklona.</p>
+          <h1>PyroprintDamir</h1>
+          <p class="slogan">Od ideje do uspomene</p>
+          <p class="lead">Lasersko graviranje i rezanje drva — izrada suvenira i personaliziranih poklona.</p>
           <div class="hero-cta">
-            <a class="cta btn-primary font-poppins" href="galerija.html">Pogledaj galeriju</a>
-            <a class="cta btn-outline font-poppins" href="kontakt.html">Kontakt</a>
+            <a class="cta btn-primary" href="galerija.html">Pogledaj galeriju</a>
+            <a class="cta btn-outline" href="kontakt.html">Kontakt</a>
           </div>
         </div>
         <div class="hero-image">
-          <img src="images/sample1.webp" alt="Primjer rada" width="100%" height="auto" loading="eager" fetchpriority="high"/>
+          <img src="images/sample1.webp" alt="Primjer rada" width="600" height="400" loading="eager" fetchpriority="high">
         </div>
       </div>
     </section>
 
     <section class="services container">
-      <h2 class="font-playfair text-primary">Usluge</h2>
+      <h2 class="text-primary">Usluge</h2>
       <div class="grid">
-        <div class="card">
-          <h3 class="font-poppins text-dark">Lasersko graviranje</h3>
-          <p class="font-roboto text-gray">Precizne gravure na drvo, metal i kožu.</p>
-        </div>
-        <div class="card">
-          <h3 class="font-poppins text-dark">Pirografija</h3>
-          <p class="font-roboto text-gray">Izrada portreta metodom paljenog drva - idealni pokloni i uspomene.</p>
-        </div>
-        <div class="card">
-          <h3 class="font-poppins text-dark">Personalizirani pokloni</h3>
-          <p class="font-roboto text-gray">Unikatni pokloni za rođendane, vjenčanja i poslovne događaje.</p>
-        </div>
+        <div class="card"><h3>Lasersko graviranje</h3><p>Precizne gravure na drvo, metal i kožu.</p></div>
+        <div class="card"><h3>Pirografija</h3><p>Izrada portreta metodom paljenog drva - idealni pokloni i uspomene.</p></div>
+        <div class="card"><h3>Personalizirani pokloni</h3><p>Unikatni pokloni za rođendane, vjenčanja i poslovne događaje.</p></div>
       </div>
     </section>
 
     <section class="contact-cta">
       <div class="container">
-        <h2 class="cta-title font-playfair text-primary">Zainteresirani?</h2>
-        <p class="cta-subtext font-roboto text-dark">Pošaljite upit ili poruku, rado ću odgovoriti.</p>
-        <a class="cta btn-primary font-poppins" href="kontakt.html">Kontakt</a>
+        <h2 class="cta-title text-primary">Zainteresirani?</h2>
+        <p class="cta-subtext">Pošaljite upit ili poruku, rado ću odgovoriti.</p>
+        <a class="cta btn-primary" href="kontakt.html">Kontakt</a>
       </div>
     </section>
   </main>
@@ -107,20 +129,10 @@
   <button id="scrollTop" class="scroll-top" aria-label="Povratak na vrh">↑</button>
 
   <script>
-    // Scroll to top
-    const scrollBtn = document.getElementById('scrollTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) scrollBtn.classList.add('show');
-      else scrollBtn.classList.remove('show');
-    });
-    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // Mobile nav toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.nav');
-    navToggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
-    });
+  const scrollBtn=document.getElementById('scrollTop');
+  window.addEventListener('scroll',()=>{scrollBtn.classList.toggle('show',window.scrollY>300)});
+  scrollBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  document.querySelector('.nav-toggle').addEventListener('click',()=>document.querySelector('.nav').classList.toggle('open'));
   </script>
 </body>
 </html>
