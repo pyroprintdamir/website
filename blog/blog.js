@@ -41,6 +41,8 @@ function initBlog(blogs) {
             setBlogSEO(blog);
             main.innerHTML = `<h1>${blog.title}${blogs[0].title === blog.title ? ' 🆕' : ''}</h1>${html}`;
 
+            window.scrollTo(0, 0); 
+
             // Ažuriranje URL-a pomoću SLUG-a
             if (updateUrl) {
                 history.pushState({ slug: blog.slug }, '', `?post=${blog.slug}`);
