@@ -1,0 +1,511 @@
+/* ======================================================
+   Pyroprint Damir - Optimizirani CSS (2025)
+   Lagani, responzivni dizajn s bržim učitavanjem
+====================================================== */
+
+/* ---------- ROOT VARIJABLE ---------- */
+:root{
+  --primary:#6A89A7;
+  --secondary:#88BDF2;
+  --accent:#BDDDFC;
+  --dark:#384959;
+  --bg:#ffffff;
+  --muted:#6b7280;
+  --max-w:1100px;
+  --radius:12px;
+}
+
+/* ---------- GLOBALNO ---------- */
+*{box-sizing:border-box;margin:0} /* Uklonjeno suvišno: padding:0 */
+html{scroll-behavior:smooth}
+body{
+  font-family:'Poppins',system-ui,-apple-system,Arial;
+  background:var(--bg);
+  color:var(--dark);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:var(--max-w);margin:0 auto;padding:24px}
+.text-primary{color:var(--primary)}
+.text-secondary{color:var(--secondary)}
+.text-muted{color:var(--muted)}
+
+/* ---------- HEADER ---------- */
+.site-header{
+  background:var(--bg);
+  position:sticky;
+  top:0;
+  z-index:50;
+  box-shadow:0 2px 8px rgba(56,73,89,0.06);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:var(--dark);
+  font-size:1.5rem;
+  font-weight:700;
+}
+.logo{
+  width:60px;
+  height:60px;
+  border-radius:10px;
+  object-fit:contain;
+  flex-shrink:0;
+}
+.nav a{
+  margin-left:18px;
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:600;
+  transition:color 0.3s ease;
+}
+.nav a:hover{
+  color:var(--primary);
+}
+.nav-toggle {
+    display: none; /* Skriveno na desktopu */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--dark);
+}
+
+/* ---------- HERO SEKCIJA ---------- */
+.hero{
+  padding:48px 0;
+  display:flex;
+  align-items:center;
+  gap:32px;
+  border-bottom:1px solid rgba(56,73,89,0.04);
+}
+.hero-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:32px;
+}
+.hero-text h1{
+  font-size:38px;
+  margin:0;
+  color:var(--primary);
+}
+.slogan{
+  color:var(--secondary);
+  font-weight:700;
+  margin-bottom:10px;
+}
+.lead{
+  font-size:1.1rem;
+  color:var(--muted);
+  margin-bottom:24px;
+}
+.hero img{
+  max-width:40vw;
+  height:auto;
+  border-radius:var(--radius);
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  flex-shrink:0;
+  object-fit:cover;
+}
+.gallery-intro-text{
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.primary h1{
+  font-size: 44px !important;
+  font-weight: 700 !important;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+  
+
+/* ---------- BUTTONS ---------- */
+.btn-primary{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:700;
+  background:linear-gradient(180deg,var(--primary),var(--secondary));
+  color:#fff;
+  transition:transform 0.2s ease,box-shadow 0.2s ease;
+}
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ---------- SERVICES (GRID) ---------- */
+.services{
+  padding:60px 0;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:32px;
+  margin-top:32px;
+}
+.card{
+  background:var(--bg);
+  border:1px solid rgba(56,73,89,0.08);
+  border-radius:var(--radius);
+  padding:24px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+  transition:transform 0.3s ease,box-shadow 0.3s ease;
+}
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+.card h3{
+  color:var(--dark);
+  margin-top:0;
+}
+.card p{
+  color:var(--muted);
+}
+
+/* ---------- CONTACT CTA ---------- */
+.contact-cta{
+  background:var(--accent);
+  padding:60px 0;
+  text-align:center;
+}
+.cta-title{
+  font-size:2rem;
+  margin-bottom:10px;
+}
+.cta-subtext{
+  font-size:1.2rem;
+  color:var(--dark);
+  margin-bottom:24px;
+}
+.cta{
+  background:var(--primary);
+  color:#fff;
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer{
+  background:var(--dark);
+  color:#fff;
+  padding:24px 0;
+  font-size:0.9rem;
+}
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.site-footer a{
+  color:var(--secondary);
+  text-decoration:none;
+  transition:color 0.3s ease;
+}
+.site-footer a:hover{
+  color:var(--accent);
+}
+
+/* ---------- SCROLL TO TOP BUTTON ---------- */
+.scroll-top{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  border-radius:50%;
+  width:45px;
+  height:45px;
+  font-size:1.5rem;
+  cursor:pointer;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  transition:opacity 0.3s ease,transform 0.3s ease;
+  z-index:100;
+}
+.scroll-top.show{
+  display:flex;
+  opacity:1;
+}
+.scroll-top:hover{
+  transform:scale(1.1);
+}
+
+/* ---------- LIGHTBOX ---------- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+.lightbox.open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.lb-image {
+    max-width: 90%;
+    max-height: 90vh;
+    margin: 0 auto;
+    display: block;
+    border-radius: 5px;
+}
+.lb-close, .lb-prev, .lb-next {
+    position: absolute;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+}
+.lb-close {
+    top: 15px;
+    right: 35px;
+}
+.lb-prev {
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+.lb-next {
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+.lb-close:hover,
+.lb-prev:hover,
+.lb-next:hover {
+    color: #bbb;
+    text-decoration: none;
+}
+.lb-caption {
+    margin: 15px auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+
+/* ---------- MEDIA QUERIES (RESPONSIVE) ---------- */
+@media (max-width: 900px) {
+    .container {
+        padding: 16px;
+    }
+    .hero-inner {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .hero img {
+        max-width: 90vw;
+        max-height: 400px;
+        width: 100%; /* Dodano za bolji render */
+    }
+    .hero-text h1 {
+        font-size: 32px;
+    }
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    /* MOBILNI MENI (NAJVAŽNIJE IZMJENE) */
+    .header-inner {
+        padding: 10px 16px; 
+    }
+    .nav {
+        display: none; /* Skriveno po defaultu */
+        position: absolute;
+        top: 70px; /* Prilagođeno visini headera */
+        right: 16px;
+        flex-direction: column;
+        background: var(--bg);
+        border-radius: var(--radius);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        width: 200px;
+        z-index: 40;
+        text-align: left;
+    }
+    .nav.open {
+        display: flex;
+    }
+    .nav a {
+        margin: 0;
+        padding: 10px 15px;
+        border-bottom: 1px solid rgba(56, 73, 89, 0.05);
+        display: block;
+    }
+    .nav a:last-child {
+        border-bottom: none;
+    }
+    .nav-toggle {
+        display: block; /* Prikazuje se na mobilnom */
+    }
+}
+@media (min-width: 901px) {
+    .nav-toggle {
+        display: none;
+    }
+}
+
+
+/* ---------- GALERIJA ---------- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 24px;
+}
+.gallery-item {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+/* ---------- KONTAKT FORMA ---------- */
+.contact-main {
+    padding: 40px 24px;
+}
+.contact-form {
+    max-width: 500px;
+    margin-top: 30px;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: var(--dark);
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 1rem;
+}
+.contact-form textarea {
+    resize: vertical;
+}
+.contact-form button[type="submit"] {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    font-size: 1.1rem;
+    padding: 12px 0;
+    margin-top: 10px;
+}
+
+
+/* ---------- BLOG SEKCIJA (DIJELOVI KOJI SU BILI U STYLE.CSS) ---------- */
+
+/* Blog Navigacija (ako se koristi u style.css) */
+.blog-nav {
+  display: flex;
+  justify-content: center;
+  box-shadow: none;
+  position: sticky;
+}
+
+.blog-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  gap: 25px;
+}
+
+.blog-nav a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.blog-nav a:hover {
+  color: #d49e00;
+}
+
+/* Dugme za promjenu teme */
+#theme-toggle {
+  background-color: #384aa8;
+  margin-left: 20px;
+  background: none;
+  border: 1px solid #ddd; /* ISPRAVLJENO: sollid -> solid */
+  border-radius: 50px;
+  width: 40px;
+  height: 40px; /* ISPRAVLJENO: hight -> height */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #333;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.2);
+  background-color: #eaeaea;
+}
+
+/* Dark mode varijante (ako se koriste) */
+.blog-page.dark-mode,
+.blog-page.dark-mode .blog-post {
+  background-color: #1c1c1c;
+  color: #d4d4d4;
+}
+.blog-page.dark-mode .blog-post {
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    border-color: #333;
+}
+.blog-page.dark-mode .blog-nav a {
+    color: #f1f1f1;
+}
