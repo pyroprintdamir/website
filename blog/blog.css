@@ -1,0 +1,147 @@
+/* ======================================================
+   Pyroprint Damir - blog.css (Revidirano za Dark Mode)
+   Stilovi specifični za strukturu bloga.
+====================================================== */
+
+.blog-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* ---------- BLOG MENI (ASIDE) ---------- */
+#blog-menu {
+  width: 250px;
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+}
+
+.menu-item {
+  padding: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  color: var(--dark);
+  font-weight: 600;
+}
+
+.menu-item:hover {
+  background: #e0e0e0;
+  color: var(--dark);
+}
+
+/* Highlight za trenutno otvoreni blog */
+.menu-item.active {
+  background: var(--secondary); /* Koristi sekundarnu boju */
+  color: white;
+  font-weight: bold;
+}
+
+/* ---------- GLAVNI BLOG SADRŽAJ (MAIN) ---------- */
+#blog-main {
+  flex-grow: 1;
+}
+
+/* Stil za pojedinačni blog post (koji se ubacuje preko JS-a) */
+.blog-post {
+    padding: 20px;
+    background: var(--bg);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.blog-post h1, .blog-post h2 {
+    color: var(--primary);
+}
+.blog-post p {
+    color: var(--dark);
+    margin-bottom: 1.5em;
+}
+/* Slike i figure */
+.blog-post figure {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.blog-post img {
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post figcaption {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 8px;
+}
+
+/* ###################################################### */
+/* ---------- DARK MODE ZA BLOG SPECIFIČNE ELEMENTE ---------- */
+/* ###################################################### */
+
+/* Dark Mode: Bočni meni */
+.blog-page.dark-mode #blog-menu {
+  background: var(--dark); /* Tamna pozadina */
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.15);
+}
+
+.blog-page.dark-mode .menu-item {
+  color: #f1f1f1; /* Svijetli tekst */
+}
+
+.blog-page.dark-mode .menu-item:hover {
+  background: #444; /* Tamniji hover */
+  color: white;
+}
+
+.blog-page.dark-mode .menu-item.active {
+  background: var(--primary); /* Primarna boja za aktivno i u DM */
+  color: white;
+}
+
+/* Dark Mode: Tekst unutar posta (ako globalni style.css ne pokriva) */
+.blog-page.dark-mode .blog-post {
+  background: #1c1c1c; /* Tamna pozadina posta */
+  color: #e0e0e0;
+  border: 1px solid #333;
+}
+.blog-page.dark-mode .blog-post h1,
+.blog-page.dark-mode .blog-post h2,
+.blog-page.dark-mode .blog-post p {
+  color: #e0e0e0;
+}
+
+
+/* ---------- Responsive za mobitele ---------- */
+@media (max-width: 768px) {
+  .blog-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+  #blog-menu {
+    width: 100%;
+    order: -1; /* Meni ide iznad sadržaja na mobitelu */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .menu-item {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+  .blog-post {
+      padding: 15px;
+  }
+}
