@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+            
+<url>
+  <loc>https://pyroprintdamir.hr/</loc>
+  <lastmod>2025-10-26T00:00:00+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://pyroprintdamir.hr/onama.html</loc>
+  <lastmod>2025-10-26T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pyroprintdamir.hr/galerija.html</loc>
+  <lastmod>2025-10-26T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pyroprintdamir.hr/kontakt.html</loc>
+  <lastmod>2025-10-26T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://pyroprintdamir.hr/blog/index.html</loc>
+  <lastmod>2025-10-26T00:00:00+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+
+<url>
+  <loc>https://pyroprintdamir.hr/blog/index.html?post=pirografija-portret-duse</loc>
+  <lastmod>2025-10-26T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://pyroprintdamir.hr/blog/index.html?post=laserska-magija-preciznosti</loc>
+  <lastmod>2025-10-25T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://pyroprintdamir.hr/blog/index.html?post=personalizacija-kao-umetnost</loc>
+  <lastmod>2025-10-24T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+</urlset>
