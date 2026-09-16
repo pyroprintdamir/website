@@ -8,9 +8,10 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
 
-# 2) Forsiraj www (ukloni ako koristiš non-www kao kanonski)
-RewriteCond %{HTTP_HOST} !^www\. [NC]
-RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [L,R=301]
+# 2) Forsiraj non-www (kanonska verzija je https://pyroprintdamir.hr/,
+#    u skladu s canonical tagovima, sitemap.xml i structured data)
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
 
 # 3a) Stari blog URL-ovi (?post=slug) -> novi čisti URL-ovi (/blog/slug)
 RewriteCond %{QUERY_STRING} ^post=([a-z0-9\-]+)$

@@ -25,7 +25,7 @@
     "logo": "https://pyroprintdamir.hr/images/logo.webp",
     "email": "pyroprint.damir@gmail.com",
     "foundingDate": "2021",
-    "sameAs": ["https://www.facebook.com/share/17HiwMozvU/"],
+    "sameAs": ["https://www.facebook.com/share/17HiwMozvU/", "https://www.instagram.com/pyroprint.damir", "https://maps.google.com/?cid=10698626758664070493"],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Rupa",
@@ -34,11 +34,38 @@
       "addressCountry": "HR"
     },
     "areaServed": [
+      { "@type": "Country", "name": "Hrvatska" },
       { "@type": "City", "name": "Rijeka" },
       { "@type": "City", "name": "Rupa" }
     ],
-    "hasMap": "https://share.google/NBNPm68NCjJtujyIz",
-    "priceRange": "€€"
+    "hasMap": "https://maps.google.com/?cid=10698626758664070493",
+    "priceRange": "€€",
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Domagoj Stemberger" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Kako smo se dogovorili, tako je napravljeno, sve preporuke."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Masimo Benazic" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Damir je vrlo ljubazan i profesionalan lik. Dogovor je bio brz i jednostavan a izvedba printa odlična."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Lea Maroto" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Odlično izgraviran nož (drvena drška) i daska za meso. Zaista je ispalo kako je zamišljeno, čak i bolje. Gospodin Damir vrlo ugodan, brz, pristupačan, potrudi se napraviti točno onako kako klijent želi. Vrlo je stručan, pojasni mogućnosti i ograničenja te pokazuje izražen smisao za estetiku. Cijena odlična! Za sljedeći poklon znamo svoj izbor za gravuru. Svaka preporuka!!"
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Martina Gelo" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Gospodin Damir je izuzetno susretljiv, strpljiv, pristupačan, voljan udovoljiti i izraditi narudžbu točno onako kako ju zamišljate. Naša narudžba je ispala čak i bolja nego smo zamišljali. Dostava nakon izrade je bila u tren oka. Mi oduševljeni, hvala vam Damire!"
+      }
+    ]
   }
   </script>
 
@@ -86,6 +113,11 @@
   .featured-grid a{display:block;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.08);transition:transform .15s}
   .featured-grid a:hover{transform:translateY(-3px)}
   .featured-grid img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+  .category-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));gap:14px;margin-top:18px}
+  .category-card{position:relative;display:block;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.08);text-decoration:none;transition:transform .15s}
+  .category-card:hover{transform:translateY(-3px)}
+  .category-card img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+  .category-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);color:#fff;padding:14px 12px 10px;font-weight:700;font-size:14px}
   </style>
 
   <link rel="preload" href="css/style.css" as="style">
@@ -99,7 +131,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">
-        <img src="images/logo.webp" alt="PyroprintDamir logo" class="logo">
+        <img src="images/logo.webp" width="1130" height="1130" alt="PyroprintDamir logo" class="logo">
         <div class="brand-text-wrap">
           <span class="brand-text">PyroprintDamir</span>
           <span class="slogan-small">Od ideje do uspomene</span>
@@ -125,11 +157,11 @@
           <p class="lead">Od 2021. izrađujemo unikatne 3D drvene karte, gravirane satove, portrete metodom pirografije i personalizirane poklone za rođendane, vjenčanja i poslovne prigode. Radimo u Rupi, u blizini Rijeke, a naručiti možete iz cijele Hrvatske.</p>
           <div class="hero-cta">
             <a class="cta btn-primary" href="galerija.html">Pogledaj galeriju</a>
-            <a class="cta btn-outline" href="kontakt.html">Kontakt</a>
+            <a class="cta btn-outline" href="kontakt.html">Zatraži ponudu</a>
           </div>
         </div>
         <div class="hero-image">
-          <img src="images/sample1.webp" alt="Primjer rada" width="600" height="400" loading="eager" fetchpriority="high">
+          <img src="images/sample1.webp" alt="Primjer rada" width="1599" height="1600" loading="eager" fetchpriority="high">
         </div>
       </div>
     </section>
@@ -139,30 +171,105 @@
       <div class="grid">
         <div class="card"><h3>Lasersko graviranje</h3><p>Precizne gravure na drvo, metal, kožu i staklo — od jednostavnih natpisa do detaljnih ilustracija i logotipa.</p></div>
         <div class="card"><h3>Pirografija</h3><p>Izrada portreta metodom paljenog drva - idealni pokloni i uspomene koje traju.</p></div>
-        <div class="card"><h3>Personalizirani pokloni</h3><p>Unikatni pokloni za rođendane, vjenčanja i poslovne događaje — 3D drvene karte, satovi, kutije i suveniri po mjeri.</p></div>
+        <div class="card"><h3><a href="personalizirani-pokloni.html" style="color:inherit;text-decoration:none;">Personalizirani pokloni</a></h3><p>Unikatni pokloni za rođendane, vjenčanja i poslovne događaje — 3D drvene karte, satovi, kutije i suveniri po mjeri.</p></div>
+      </div>
+    </section>
+
+    <section class="categories container" style="padding:24px 0;">
+      <h2 class="text-primary">Pogledajte po kategorijama</h2>
+      <div class="category-grid">
+        <a class="category-card" href="portreti-na-drvu.html">
+          <img src="images/thumbs/55.webp" width="900" height="675" loading="lazy" decoding="async" alt="Portreti na drvu">
+          <span class="category-label">Portreti</span>
+        </a>
+        <a class="category-card" href="3d-drvene-karte.html">
+          <img src="images/thumbs/5.webp" width="900" height="900" loading="lazy" decoding="async" alt="3D drvene karte">
+          <span class="category-label">3D karte</span>
+        </a>
+        <a class="category-card" href="satovi.html">
+          <img src="images/thumbs/57.webp" width="675" height="900" loading="lazy" decoding="async" alt="Drveni satovi">
+          <span class="category-label">Satovi</span>
+        </a>
+        <a class="category-card" href="personalizirani-pokloni.html">
+          <img src="images/thumbs/58.webp" width="900" height="675" loading="lazy" decoding="async" alt="Personalizirani pokloni">
+          <span class="category-label">Pokloni</span>
+        </a>
+        <a class="category-card" href="galerija.html#natpisi">
+          <img src="images/thumbs/56.webp" width="900" height="458" loading="lazy" decoding="async" alt="Kućni brojevi i natpisi">
+          <span class="category-label">Natpisi</span>
+        </a>
+        <a class="category-card" href="galerija.html#pokloni">
+          <img src="images/thumbs/54.webp" width="776" height="900" loading="lazy" decoding="async" alt="Suveniri i prigodni pokloni">
+          <span class="category-label">Suveniri</span>
+        </a>
       </div>
     </section>
 
     <section class="featured container">
       <h2 class="text-primary">Izdvojeni radovi</h2>
       <div class="featured-grid">
-        <a href="galerija.html"><img src="images/thumbs/5.webp" width="900" height="900" loading="lazy" decoding="async" alt="3D drvena karta, Jadransko more, Hrvatski otoci"></a>
-        <a href="galerija.html"><img src="images/thumbs/1.webp" width="900" height="900" loading="lazy" decoding="async" alt="3D drvena karta, Šibenski arhipelag"></a>
-        <a href="galerija.html"><img src="images/thumbs/53.webp" width="900" height="900" loading="lazy" decoding="async" alt="Obiteljski portret, pirografija na drvu"></a>
-        <a href="galerija.html"><img src="images/thumbs/45.webp" width="900" height="900" loading="lazy" decoding="async" alt="Portret žene, pirografija na drvu"></a>
+        <a href="3d-drvene-karte.html"><img src="images/thumbs/5.webp" width="900" height="900" loading="lazy" decoding="async" alt="3D drvena karta, Jadransko more, Hrvatski otoci"></a>
+        <a href="3d-drvene-karte.html"><img src="images/thumbs/1.webp" width="900" height="900" loading="lazy" decoding="async" alt="3D drvena karta, Šibenski arhipelag"></a>
+        <a href="portreti-na-drvu.html"><img src="images/thumbs/53.webp" width="900" height="900" loading="lazy" decoding="async" alt="Obiteljski portret, pirografija na drvu"></a>
+        <a href="portreti-na-drvu.html"><img src="images/thumbs/45.webp" width="900" height="900" loading="lazy" decoding="async" alt="Portret žene, pirografija na drvu"></a>
         <a href="galerija.html"><img src="images/thumbs/46.webp" width="900" height="900" loading="lazy" decoding="async" alt="Daska za rezanje s ilustracijom i natpisom"></a>
-        <a href="galerija.html"><img src="images/thumbs/12.webp" width="900" height="900" loading="lazy" decoding="async" alt="Sat, Velekem, antracit boja, 30cm"></a>
+        <a href="satovi.html"><img src="images/thumbs/12.webp" width="900" height="900" loading="lazy" decoding="async" alt="Sat, Velekem, antracit boja, 30cm"></a>
       </div>
       <p style="text-align:center;margin-top:20px;">
         <a class="cta btn-outline" href="galerija.html">Pogledaj cijelu galeriju</a>
       </p>
     </section>
 
+    <section class="testimonials container" style="padding:24px 0;">
+      <h2 class="text-primary">Što kažu kupci</h2>
+      <div class="card" style="max-width:600px;">
+        <p style="color:#d4a017;letter-spacing:2px;margin:0 0 8px;">★★★★★</p>
+        <p class="text-dark" style="font-style:italic;">„Kako smo se dogovorili, tako je napravljeno, sve preporuke.”</p>
+        <p class="text-dark" style="margin-top:12px;font-weight:700;">Domagoj Stemberger</p>
+        <p class="slogan-small">Google recenzija</p>
+      </div>
+      <div class="card" style="max-width:600px;margin-top:16px;">
+        <p style="color:#d4a017;letter-spacing:2px;margin:0 0 8px;">★★★★★</p>
+        <p class="text-dark" style="font-style:italic;">„Damir je vrlo ljubazan i profesionalan lik. Dogovor je bio brz i jednostavan a izvedba printa odlična.”</p>
+        <p class="text-dark" style="margin-top:12px;font-weight:700;">Masimo Benazic</p>
+        <p class="slogan-small">Google recenzija</p>
+      </div>
+      <div class="card" style="max-width:600px;margin-top:16px;">
+        <p style="color:#d4a017;letter-spacing:2px;margin:0 0 8px;">★★★★★</p>
+        <p class="text-dark" style="font-style:italic;">„Odlično izgraviran nož (drvena drška) i daska za meso. Zaista je ispalo kako je zamišljeno, čak i bolje. Gospodin Damir vrlo ugodan, brz, pristupačan, potrudi se napraviti točno onako kako klijent želi. Vrlo je stručan, pojasni mogućnosti i ograničenja te pokazuje izražen smisao za estetiku. Cijena odlična! Za sljedeći poklon znamo svoj izbor za gravuru. Svaka preporuka!!”</p>
+        <p class="text-dark" style="margin-top:12px;font-weight:700;">Lea Maroto</p>
+        <p class="slogan-small">Google recenzija</p>
+      </div>
+      <div class="card" style="max-width:600px;margin-top:16px;">
+        <p style="color:#d4a017;letter-spacing:2px;margin:0 0 8px;">★★★★★</p>
+        <p class="text-dark" style="font-style:italic;">„Gospodin Damir je izuzetno susretljiv, strpljiv, pristupačan, voljan udovoljiti i izraditi narudžbu točno onako kako ju zamišljate. Naša narudžba je ispala čak i bolja nego smo zamišljali. Dostava nakon izrade je bila u tren oka. Mi oduševljeni, hvala vam Damire!”</p>
+        <p class="text-dark" style="margin-top:12px;font-weight:700;">Martina Gelo</p>
+        <p class="slogan-small">Google recenzija</p>
+      </div>
+    </section>
+
+    <section class="faq-preview container" style="padding:24px 0;">
+      <h2 class="text-primary">Često postavljana pitanja</h2>
+      <div class="faq-item" style="margin-bottom:14px;">
+        <h3 style="margin-bottom:4px;">Mogu li poslati vlastitu fotografiju ili dizajn?</h3>
+        <p class="text-dark">Da, možete poslati vlastitu fotografiju ili gotov dizajn, a mi pripremimo prijedlog izrade.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:14px;">
+        <h3 style="margin-bottom:4px;">Koliko traje izrada?</h3>
+        <p class="text-dark">Otprilike 3 do 7 dana, ovisno o vrsti narudžbe.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:14px;">
+        <h3 style="margin-bottom:4px;">Dostavljate li po cijeloj Hrvatskoj?</h3>
+        <p class="text-dark">Da, šaljemo poštom diljem Hrvatske.</p>
+      </div>
+      <p><a class="cta btn-outline" href="kontakt.html#faq">Pogledajte sva pitanja</a></p>
+    </section>
+
     <section class="contact-cta">
       <div class="container">
-        <h2 class="cta-title text-primary">Zainteresirani?</h2>
-        <p class="cta-subtext">Pošaljite upit ili poruku, rado ću odgovoriti.</p>
-        <a class="cta btn-primary" href="kontakt.html">Kontakt</a>
+        <h2 class="cta-title text-primary">Imate ideju za poklon?</h2>
+        <p class="cta-subtext">Pošaljite fotografiju ili opišite što želite — javit ću vam mogućnosti i okvirnu cijenu.</p>
+        <a class="cta btn-primary" href="kontakt.html">Pošaljite upit</a>
       </div>
     </section>
   </main>
@@ -172,6 +279,7 @@
       <p>© PyroprintDamir 2021 | <a href="mailto:pyroprint.damir@gmail.com">pyroprint.damir@gmail.com</a></p>
       <div class="social">
         <a href="https://www.facebook.com/share/17HiwMozvU/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/pyroprint.damir" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
   </footer>
