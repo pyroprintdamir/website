@@ -192,3 +192,46 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 3200);
     });
 });
+
+// ---------- GDPR / obavijest o kolačićima (Google Analytics consent) ----------
+(function(){
+  var CONSENT_KEY = 'pd_cookie_consent';
+
+  function setAnalyticsConsent(granted){
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        'analytics_storage': granted ? 'granted' : 'denied'
+      });
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    var stored = null;
+    try { stored = localStorage.getItem(CONSENT_KEY); } catch(e) {}
+
+    if (stored === 'granted') { setAnalyticsConsent(true); return; }
+    if (stored === 'denied') { return; }
+
+    var banner = document.createElement('div');
+    banner.className = 'cookie-consent-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Obavijest o kolačićima');
+    banner.innerHTML =
+      '<p>Ova stranica koristi Google Analytics kolačiće za anonimnu statistiku posjeta, kako bismo poboljšali sadržaj. Podaci se ne koriste za oglašavanje.</p>' +
+      '<div class="cookie-consent-actions">' +
+        '<button type="button" class="cookie-consent-decline">Odbijam</button>' +
+        '<button type="button" class="cookie-consent-accept">Prihvaćam</button>' +
+      '</div>';
+    document.body.appendChild(banner);
+
+    banner.querySelector('.cookie-consent-accept').addEventListener('click', function(){
+      try { localStorage.setItem(CONSENT_KEY, 'granted'); } catch(e) {}
+      setAnalyticsConsent(true);
+      banner.remove();
+    });
+    banner.querySelector('.cookie-consent-decline').addEventListener('click', function(){
+      try { localStorage.setItem(CONSENT_KEY, 'denied'); } catch(e) {}
+      banner.remove();
+    });
+  });
+})();
