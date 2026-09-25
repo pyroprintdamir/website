@@ -154,3 +154,41 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+/* ======================================================
+   Blog hero galerija - auto-rotacija + swipe (blog/{slug}.html)
+====================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+    const tracks = document.querySelectorAll('.blog-hero-gallery-track');
+    if (!tracks.length) return;
+
+    tracks.forEach((track) => {
+        let paused = false;
+        let resumeTimer = null;
+
+        function pauseAwhile() {
+            paused = true;
+            clearTimeout(resumeTimer);
+            resumeTimer = setTimeout(() => { paused = false; }, 4500);
+        }
+
+        track.addEventListener('mouseenter', () => { paused = true; });
+        track.addEventListener('mouseleave', () => { paused = false; });
+        track.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+        track.addEventListener('touchend', pauseAwhile, { passive: true });
+        track.addEventListener('wheel', pauseAwhile, { passive: true });
+
+        setInterval(() => {
+            if (paused) return;
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            if (maxScroll <= 4) return;
+            const step = track.clientWidth * 0.55 || 260;
+            const next = track.scrollLeft + step;
+            if (next >= maxScroll - 5) {
+                track.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                track.scrollTo({ left: next, behavior: 'smooth' });
+            }
+        }, 3200);
+    });
+});
