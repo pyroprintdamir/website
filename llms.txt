@@ -1,0 +1,25 @@
+# PyroprintDamir
+
+> Lasersko graviranje, pirografija i izrada personaliziranih drvenih poklona. Obrt u Rupi kraj Rijeke (Primorsko-goranska županija, Hrvatska), posluje od 2021. Dostava po cijeloj Hrvatskoj.
+
+## Usluge i proizvodi
+
+- [Lasersko graviranje na drvu](https://pyroprintdamir.hr/graviranje-na-drvo): pregled usluge laserskog graviranja na drvu po narudžbi — satovi, 3D drvene karte, personalizirani pokloni, natpisi i kućni brojevi.
+- [Portreti na drvu – pirografija po fotografiji](https://pyroprintdamir.hr/portreti-na-drvu): ručna pirografija portreta po fotografiji — pojedinačni, obiteljski, portreti kućnih ljubimaca i memorijalni portreti.
+- [Drveni satovi po narudžbi](https://pyroprintdamir.hr/satovi): zidni i stolni satovi s laserskim graviranjem bilo kojeg motiva, slike ili loga.
+- [3D drvene karte po narudžbi](https://pyroprintdamir.hr/3d-drvene-karte): 3D drvene karte izrađene laserskim rezanjem po dubinskim konturama — bilo koja lokacija, natpis, datum ili koordinate.
+- [Personalizirani i poslovni pokloni](https://pyroprintdamir.hr/personalizirani-pokloni): privjesci, satovi, zahvalnice, plakete i kutije s graviranjem, uključujući gravuru loga tvrtke.
+- [Kućni brojevi, natpisi i putokazi](https://pyroprintdamir.hr/kucni-brojevi): drveni kućni brojevi, natpisi i putokazi s laserskim graviranjem imena, adrese ili teksta.
+
+## O obrtu
+
+- [O nama](https://pyroprintdamir.hr/onama): misija i filozofija — kvaliteta, pouzdanost i individualni pristup klijentu.
+- [Galerija radova](https://pyroprintdamir.hr/galerija): portreti, gravirani satovi, 3D drvene karte i personalizirani pokloni iz dosadašnje izrade.
+- [Kontakt](https://pyroprintdamir.hr/kontakt): forma i e-mail za upite, narudžbe i ponude.
+
+## Blog
+
+- [Pirografija: Kad Vatra Urezuje Portret Duše u Drvo](https://pyroprintdamir.hr/blog/pirografija-portret-duse): o umjetnosti pirografije i izradi portreta na drvetu.
+- [Što se sve može laserski gravirati?](https://pyroprintdamir.hr/blog/sto-se-sve-moze-lasersko-gravirati): pregled materijala pogodnih za lasersko graviranje — drvo, staklo, koža, metal.
+- [Personalizacija kao Umjetnost](https://pyroprintdamir.hr/blog/personalizacija-kao-umetnost): o vrijednosti personaliziranih poklona.
+- [Laserska Magija Preciznosti](https://pyroprintdamir.hr/blog/laserska-magija-preciznosti): o preciznosti laserskog graviranja i izradi 3D drvenih karata.
