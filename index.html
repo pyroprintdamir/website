@@ -58,8 +58,8 @@
   <link rel="preload" as="image" href="images/sample1.webp">
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" as="style">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=optional" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
 
   <style>
   :root{
@@ -81,7 +81,7 @@
   .hero-text h1{font-size:38px;margin:0;color:var(--primary)}
   .slogan{color:var(--secondary);font-weight:700;margin-bottom:10px}
   .lead{color:var(--muted);margin-bottom:18px}
-  .hero-image img{width:420px;max-width:40vw;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,0.06)}
+  .hero-image img{width:420px;max-width:40vw;aspect-ratio:1599/1600;height:auto;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,0.06)}
   .cta{display:inline-block;padding:12px 18px;border-radius:14px;text-decoration:none;font-weight:700;cursor:pointer}
   .btn-primary{background:linear-gradient(180deg,var(--primary),var(--secondary));color:#fff;border:none}
   .btn-outline{background:transparent;color:var(--primary);border:2px solid var(--secondary)}
