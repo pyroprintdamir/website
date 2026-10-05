@@ -15,20 +15,23 @@
     'analytics_storage': 'denied'
   });
 
+  // Povratni posjetitelj koji je već prihvatio kolačiće: pristanak se vraća prije prvog slanja podataka
+  try { if (localStorage.getItem('pd_cookie_consent') === 'granted') { gtag('consent', 'update', { 'analytics_storage': 'granted' }); } } catch (e) {}
+
   gtag('js', new Date());
   gtag('config', 'G-7XLZSRZ4M8');
 </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Personalizirani i poslovni pokloni | Lasersko graviranje – Pyroprint Damir</title>
-  <meta name="description" content="Personalizirani i poslovni pokloni s laserskim graviranjem — privjesci, satovi, zahvalnice, plakete i kutije. Gravura loga tvrtke, veće količine, izrada po mjeri. Rupa kraj Rijeke, dostava po cijeloj Hrvatskoj.">
+  <title>Personalizirani pokloni s graviranjem | Pyroprint Damir</title>
+  <meta name="description" content="Personalizirani i poslovni pokloni s laserskim graviranjem — privjesci, satovi, zahvalnice, plakete i kutije. Gravura loga tvrtke, veće količine.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://pyroprintdamir.hr/personalizirani-pokloni">
 
   <meta property="og:title" content="Personalizirani i poslovni pokloni – Pyroprint Damir">
   <meta property="og:description" content="Privjesci, satovi, zahvalnice, plakete i kutije s laserskim graviranjem. Gravura loga tvrtke i izrada u većim količinama.">
-  <meta property="og:image" content="https://pyroprintdamir.hr/images/seo-slika.png">
+  <meta property="og:image" content="https://pyroprintdamir.hr/images/seo-slika.webp">
   <meta property="og:url" content="https://pyroprintdamir.hr/personalizirani-pokloni">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -128,9 +131,8 @@
   .featured-grid img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;display:block}
   </style>
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=optional" as="style">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="preload" href="fonts/poppins-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-latin-700.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="preload" href="css/style.css" as="style">
   <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
@@ -237,6 +239,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© PyroprintDamir 2021 | <a href="mailto:pyroprint.damir@gmail.com">pyroprint.damir@gmail.com</a></p>
+      <p class="footer-legal"><a href="politika-privatnosti.html">Politika privatnosti</a> · <a href="#" class="cookie-settings-link">Postavke kolačića</a></p>
       <a href="https://www.facebook.com/share/17HiwMozvU/" target="_blank" rel="noopener">Facebook</a>
       <a href="https://www.instagram.com/pyroprint.damir" target="_blank" rel="noopener">Instagram</a>
     </div>

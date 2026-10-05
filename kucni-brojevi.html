@@ -15,20 +15,23 @@
     'analytics_storage': 'denied'
   });
 
+  // Povratni posjetitelj koji je već prihvatio kolačiće: pristanak se vraća prije prvog slanja podataka
+  try { if (localStorage.getItem('pd_cookie_consent') === 'granted') { gtag('consent', 'update', { 'analytics_storage': 'granted' }); } } catch (e) {}
+
   gtag('js', new Date());
   gtag('config', 'G-7XLZSRZ4M8');
 </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Kućni brojevi, natpisi i putokazi | Lasersko graviranje – Pyroprint Damir</title>
-  <meta name="description" content="Drveni kućni brojevi, natpisi i putokazi s laserskim graviranjem imena, adrese ili teksta, izrađeni po mjeri. Rupa kraj Rijeke, dostava po cijeloj Hrvatskoj.">
+  <title>Kućni brojevi i natpisi na drvu | Pyroprint Damir</title>
+  <meta name="description" content="Drveni kućni brojevi, natpisi i putokazi s laserskim graviranjem imena, adrese ili teksta, izrađeni po mjeri.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://pyroprintdamir.hr/kucni-brojevi">
 
   <meta property="og:title" content="Kućni brojevi, natpisi i putokazi – Pyroprint Damir">
   <meta property="og:description" content="Drveni kućni brojevi, natpisi i putokazi s laserskim graviranjem, izrađeni po mjeri prema vašoj adresi ili tekstu.">
-  <meta property="og:image" content="https://pyroprintdamir.hr/images/seo-slika.png">
+  <meta property="og:image" content="https://pyroprintdamir.hr/images/seo-slika.webp">
   <meta property="og:url" content="https://pyroprintdamir.hr/kucni-brojevi">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -94,6 +97,30 @@
           "@type": "Answer",
           "text": "Izrada standardno traje 3 do 7 dana."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Mogu li dodati ukrasni motiv ili simbol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Da, uz tekst možemo dodati ukrasne elemente i simbole, kao što su lišće ili srce kao ukrasna crta na našem primjeru putokaza. Javite nam što vam se sviđa pa predlažemo rješenje."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Što trebam poslati za narudžbu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tekst koji treba pisati, željeni oblik i okvirnu veličinu te, ako možete, fotografiju mjesta gdje će natpis stajati. Zatim pripremamo prijedlog izgleda, a ništa ne ide u izradu dok ga ne potvrdite."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Šaljete li natpise i putokaze po cijeloj Hrvatskoj?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Da, šaljemo poštom po cijeloj Hrvatskoj, u pravilu GLS dostavom. Proizvodi se pakiraju za siguran transport."
+        }
       }
     ]
   }
@@ -128,9 +155,8 @@
   .featured-grid img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;display:block}
   </style>
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=optional" as="style">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="preload" href="fonts/poppins-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-latin-700.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="preload" href="css/style.css" as="style">
   <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
@@ -164,16 +190,25 @@
     <p class="text-dark">Izrađujemo drvene kućne brojeve, natpise i putokaze s laserskim graviranjem adrese, imena ili teksta po želji — praktično i lijepo rješenje za ulaz u kuću, dvorište ili okućnicu. Radimo u Rupi, u blizini Rijeke, a narudžbe šaljemo diljem Hrvatske.</p>
 
     <h2 class="text-dark">Što izrađujemo</h2>
-    <p class="text-gray">U ovu kategoriju spadaju kućni brojevi, natpisi s imenom obitelji ili adresom te putokazi za dvorište ili prilaz kući. Tekst, brojevi i oblik dogovaraju se prema vašoj želji.</p>
+    <p class="text-gray">U ovu kategoriju spadaju kućni brojevi, natpisi s imenom obitelji ili adresom te putokazi za dvorište ili prilaz kući. Na našem primjeru putokaza u obliku strelice od hrastovine s prirodnim rubom gravirani su adresa, prezime obitelji i ukrasni motiv hrastova lišća. Tekst, brojevi, oblik i veličina dogovaraju se prema vašoj želji.</p>
 
-    <h2 class="text-dark">Personalizacija</h2>
-    <p class="text-gray">Na natpis ili putokaz gravira se adresa, ime obitelji, broj kuće ili drugi tekst po dogovoru. Javite nam što želite da piše, pa ćemo predložiti izgled.</p>
+    <h2 class="text-dark">Što možete gravirati</h2>
+    <p class="text-gray">Adresu, broj kuće, ime obitelji, naziv imanja ili neki drugi kratki tekst. Uz tekst možemo dodati i ukrasne elemente i simbole, poput lišća ili srca kao ukrasne crte, kao na primjeru putokaza. Javite nam što želite da piše, pa ćemo predložiti raspored i izgled slova. Natpis s imenom obitelji može biti i lijep poklon, npr. za useljenje u novi dom.</p>
+
+    <h2 class="text-dark">Oblik i veličina</h2>
+    <p class="text-gray">Natpis može biti pravokutan, u obliku strelice kao putokaz ili neki drugi oblik koji dogovorimo. Veličinu biramo prema mjestu na kojem će stajati i udaljenosti s koje se treba čitati: što je veća udaljenost, to slova trebaju biti veća. Kad nam javite gdje natpis ide, rado predložimo mjere.</p>
+
+    <h2 class="text-dark">Gdje će natpis stajati</h2>
+    <p class="text-gray">Ako natpis ide na otvoreno (ulaz, ograda, prilaz), javite nam kako je postavljen i je li izložen kiši i suncu. Tako zajedno dogovaramo materijal i završnu obradu.</p>
 
     <h2 class="text-dark">Materijal i završna obrada</h2>
     <p class="text-gray">Izrađujemo od drva, a nakon graviranja proizvod lakiramo radi zaštite i ljepšeg izgleda, jednako kao i ostale naše proizvode.</p>
 
+    <h2 class="text-dark">Kako naručiti</h2>
+    <p class="text-gray">Pošaljite nam tekst koji treba pisati, željeni oblik i okvirnu veličinu te, ako možete, fotografiju mjesta na kojem će natpis stajati. Pripremimo prijedlog izgleda, a ništa ne ide u izradu dok ga ne potvrdite. Nakon izrade i lakiranja proizvod pakiramo i šaljemo poštom po cijeloj Hrvatskoj, u pravilu GLS dostavom.</p>
+
     <h2 class="text-dark">Rok izrade</h2>
-    <p class="text-gray">Izrada standardno traje 3 do 7 dana.</p>
+    <p class="text-gray">Izrada standardno traje 3 do 7 dana. Hitne narudžbe u pravilu ne radimo, ali javite nam željeni rok pa ćemo vidjeti što je moguće. Pregled svih usluga potražite na stranici <a href="graviranje-na-drvo.html">lasersko graviranje na drvu</a>, a za poklone i veće količine pogledajte <a href="personalizirani-pokloni.html">personalizirane i poslovne poklone</a>.</p>
 
     <section class="featured container" style="padding:24px 0 0;">
       <h2 class="text-primary">Primjer izrade</h2>
@@ -207,6 +242,21 @@
         <h3 style="margin-bottom:4px;">Koliko traje izrada?</h3>
         <p class="text-dark">Izrada standardno traje 3 do 7 dana.</p>
       </div>
+
+      <div class="faq-item" style="margin-bottom:18px;">
+        <h3 style="margin-bottom:4px;">Mogu li dodati ukrasni motiv ili simbol?</h3>
+        <p class="text-dark">Da, uz tekst možemo dodati ukrasne elemente i simbole, kao što su lišće ili srce kao ukrasna crta na našem primjeru putokaza. Javite nam što vam se sviđa pa predlažemo rješenje.</p>
+      </div>
+
+      <div class="faq-item" style="margin-bottom:18px;">
+        <h3 style="margin-bottom:4px;">Što trebam poslati za narudžbu?</h3>
+        <p class="text-dark">Tekst koji treba pisati, željeni oblik i okvirnu veličinu te, ako možete, fotografiju mjesta gdje će natpis stajati. Zatim pripremamo prijedlog izgleda, a ništa ne ide u izradu dok ga ne potvrdite.</p>
+      </div>
+
+      <div class="faq-item" style="margin-bottom:18px;">
+        <h3 style="margin-bottom:4px;">Šaljete li natpise i putokaze po cijeloj Hrvatskoj?</h3>
+        <p class="text-dark">Da, šaljemo poštom po cijeloj Hrvatskoj, u pravilu GLS dostavom. Proizvodi se pakiraju za siguran transport.</p>
+      </div>
     </section>
 
     <section class="contact-cta" style="margin-top:32px;">
@@ -219,6 +269,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© PyroprintDamir 2021 | <a href="mailto:pyroprint.damir@gmail.com">pyroprint.damir@gmail.com</a></p>
+      <p class="footer-legal"><a href="politika-privatnosti.html">Politika privatnosti</a> · <a href="#" class="cookie-settings-link">Postavke kolačića</a></p>
       <a href="https://www.facebook.com/share/17HiwMozvU/" target="_blank" rel="noopener">Facebook</a>
       <a href="https://www.instagram.com/pyroprint.damir" target="_blank" rel="noopener">Instagram</a>
     </div>

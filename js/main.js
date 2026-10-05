@@ -205,19 +205,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  document.addEventListener('DOMContentLoaded', function(){
-    var stored = null;
-    try { stored = localStorage.getItem(CONSENT_KEY); } catch(e) {}
-
-    if (stored === 'granted') { setAnalyticsConsent(true); return; }
-    if (stored === 'denied') { return; }
+  function showBanner(){
+    var old = document.querySelector('.cookie-consent-banner');
+    if (old) old.remove();
 
     var banner = document.createElement('div');
     banner.className = 'cookie-consent-banner';
     banner.setAttribute('role', 'dialog');
     banner.setAttribute('aria-label', 'Obavijest o kolačićima');
     banner.innerHTML =
-      '<p>Ova stranica koristi Google Analytics kolačiće za anonimnu statistiku posjeta, kako bismo poboljšali sadržaj. Podaci se ne koriste za oglašavanje.</p>' +
+      '<p>Uz vaš pristanak koristimo Google Analytics kolačiće za anonimnu statistiku posjeta, kako bismo poboljšali sadržaj. Podaci se ne koriste za oglašavanje. <a href="/politika-privatnosti">Politika privatnosti</a></p>' +
       '<div class="cookie-consent-actions">' +
         '<button type="button" class="cookie-consent-decline">Odbijam</button>' +
         '<button type="button" class="cookie-consent-accept">Prihvaćam</button>' +
@@ -231,7 +228,82 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     banner.querySelector('.cookie-consent-decline').addEventListener('click', function(){
       try { localStorage.setItem(CONSENT_KEY, 'denied'); } catch(e) {}
+      setAnalyticsConsent(false);
       banner.remove();
     });
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    var stored = null;
+    try { stored = localStorage.getItem(CONSENT_KEY); } catch(e) {}
+
+    if (stored === 'granted') { setAnalyticsConsent(true); }
+    else if (stored !== 'denied') { showBanner(); }
+  });
+
+  // Poveznica "Postavke kolačića" u podnožju: omogućuje promjenu ili povlačenje pristanka
+  document.addEventListener('click', function(e){
+    var link = e.target.closest ? e.target.closest('.cookie-settings-link') : null;
+    if (link) {
+      e.preventDefault();
+      showBanner();
+    }
   });
 })();
+
+// ---------- Google karta: učitava se tek nakon klika (bez automatskog slanja podataka Googleu) ----------
+document.addEventListener('click', function(e){
+  var btn = e.target.closest ? e.target.closest('.map-consent-load') : null;
+  if (!btn) return;
+  var box = btn.closest('.map-consent');
+  if (!box) return;
+  var iframe = document.createElement('iframe');
+  iframe.src = box.getAttribute('data-map-src');
+  iframe.title = box.getAttribute('data-map-title') || 'Google karta';
+  iframe.width = '100%';
+  iframe.height = '300';
+  iframe.style.cssText = 'border:0;display:block;';
+  iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+  box.innerHTML = '';
+  box.classList.add('map-loaded');
+  box.appendChild(iframe);
+});
+
+// ---------- Kontakt forma: slanje preko vlastitog Cloudflare Workera (bez trećeg obrađivača) ----------
+document.addEventListener('submit', async function(e){
+  var form = e.target;
+  if (!form.classList || !form.classList.contains('contact-form')) return;
+  e.preventDefault();
+
+  var status = form.querySelector('.form-status');
+  var btn = form.querySelector('button[type="submit"]');
+  function say(msg, ok){
+    if (!status) return;
+    status.textContent = msg;
+    status.className = 'form-status ' + (ok ? 'ok' : 'err');
+  }
+  function resetCaptcha(){ try { if (window.turnstile) window.turnstile.reset(); } catch(err) {} }
+
+  btn.disabled = true;
+  say('Šaljem…', true);
+  try {
+    var res = await fetch(form.action, { method: 'POST', body: new FormData(form) });
+    var data = {};
+    try { data = await res.json(); } catch(err) {}
+    if (res.ok && data.ok) {
+      form.reset();
+      resetCaptcha();
+      say('Hvala! Upit je poslan, javit ćemo vam se uskoro.', true);
+    } else if (data.error === 'captcha') {
+      resetCaptcha();
+      say('Provjera zaštite od spama nije uspjela. Pričekajte trenutak i pokušajte ponovno.', false);
+    } else if (data.error === 'validation') {
+      say('Provjerite jesu li ime, e-mail i poruka ispravno upisani.', false);
+    } else {
+      say('Slanje nije uspjelo. Pokušajte ponovno ili nam pišite na pyroprint.damir@gmail.com.', false);
+    }
+  } catch(err) {
+    say('Slanje nije uspjelo. Pokušajte ponovno ili nam pišite na pyroprint.damir@gmail.com.', false);
+  }
+  btn.disabled = false;
+});

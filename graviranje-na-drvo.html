@@ -15,6 +15,9 @@
     'analytics_storage': 'denied'
   });
 
+  // Povratni posjetitelj koji je već prihvatio kolačiće: pristanak se vraća prije prvog slanja podataka
+  try { if (localStorage.getItem('pd_cookie_consent') === 'granted') { gtag('consent', 'update', { 'analytics_storage': 'granted' }); } } catch (e) {}
+
   gtag('js', new Date());
   gtag('config', 'G-7XLZSRZ4M8');
 </script>
@@ -28,7 +31,7 @@
 
   <meta property="og:title" content="Lasersko graviranje na drvu – Pyroprint Damir">
   <meta property="og:description" content="Lasersko graviranje na drvu za satove, 3D drvene karte, personalizirane i poslovne poklone, natpise i kućne brojeve.">
-  <meta property="og:image" content="https://pyroprintdamir.hr/images/seo-slika.png">
+  <meta property="og:image" content="https://pyroprintdamir.hr/images/seo-slika.webp">
   <meta property="og:url" content="https://pyroprintdamir.hr/graviranje-na-drvo">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -84,7 +87,7 @@
         "name": "Koji materijali se koriste?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Najčešće koristimo šperploču, MDF i pravo drvo poput hrasta, ovisno o proizvodu, a nakon graviranja proizvod lakiramo."
+          "text": "Najčešće koristimo šperploču (bukva), MDF i pravo drvo poput hrasta, ovisno o proizvodu, a nakon graviranja proizvod lakiramo."
         }
       },
       {
@@ -97,10 +100,42 @@
       },
       {
         "@type": "Question",
+        "name": "Što trebam poslati za narudžbu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dovoljno je poslati fotografiju, dizajn ili logo, ili samo opisati ideju. Zatim zajedno pripremamo prijedlog izrade, a ništa ne ide u izradu dok ne potvrdite da ste zadovoljni."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Radite li gravuru loga tvrtke u većim količinama?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Da, radimo i veće količine, npr. za poklone zaposlenicima ili poslovnim partnerima. Prije izrade cijele serije pripremamo prikaz dizajna uz mogućnost dorade, a rok izrade je duži nego kod pojedinačnih komada."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Koliko traje izrada?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Izrada standardno traje 3 do 7 dana."
+          "text": "Standardna izrada traje 3 do 7 dana. Veće narudžbe traju duže, a hitne u pravilu ne radimo, ali javite nam željeni rok pa ćemo vidjeti što je moguće."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Šaljete li po cijeloj Hrvatskoj?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Da, šaljemo poštom po cijeloj Hrvatskoj, u pravilu GLS dostavom. Proizvodi se pakiraju za siguran transport, a poklon pakiranje moguće je za neke proizvode."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mogu li vratiti ili reklamirati proizvod?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Da. Ako niste zadovoljni primljenim proizvodom, možete ga vratiti ili reklamirati."
         }
       }
     ]
@@ -146,9 +181,8 @@
   .featured-grid img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;display:block}
   </style>
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=optional" as="style">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="preload" href="fonts/poppins-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-latin-700.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="preload" href="css/style.css" as="style">
   <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
@@ -182,19 +216,30 @@
     <p class="text-dark">Bavimo se laserskim graviranjem na drvu po narudžbi — od satova i 3D drvenih karata do personaliziranih i poslovnih poklona, natpisa i kućnih brojeva. Radimo u Rupi, u blizini Rijeke, a narudžbe šaljemo diljem Hrvatske.</p>
 
     <h2 class="text-dark">Što sve radimo laserskim graviranjem</h2>
-    <p class="text-gray">Laserski graviramo tekst, imena, datume, logotipe i motive na drvu, ovisno o proizvodu koji odaberete. Bilo da trebate graviranje drva, graviranje drveta ili gravuru na drvo — riječ je o istoj usluzi koju izrađujemo po narudžbi. Najčešće se laser koristi za satove, 3D drvene karte, personalizirane i poslovne poklone te natpise, putokaze i kućne brojeve.</p>
+    <p class="text-gray">Laserom na drvu graviramo tekst, imena, datume, logotipe, ilustracije i QR kodove. Takvo graviranje drva daje oštar i dobro čitljiv zapis, pa je pogodno za sve što mora biti precizno. Najčešće ga koristimo za četiri skupine proizvoda: <a href="satovi.html">drvene satove</a> s vašim motivom ili logom, <a href="3d-drvene-karte.html">3D drvene karte</a> bilo koje lokacije, <a href="personalizirani-pokloni.html">personalizirane i poslovne poklone</a> (privjesci, zahvalnice, plakete, kutije) te <a href="kucni-brojevi.html">kućne brojeve, natpise i putokaze</a>.</p>
 
     <h2 class="text-dark">Razlika u odnosu na pirografiju</h2>
     <p class="text-gray">Lasersko graviranje znači precizno urezivanje strojem prema digitalnom predlošku — pogodno za tekst, logo, geometrijske i detaljne motive. Za portrete na drvu koristimo klasičnu ručnu tehniku pirografije (paljenje drva), jer daje topliji, ručno rađen izgled kakav laser ne postiže. Ako tražite baš portret po fotografiji, pogledajte stranicu <a href="portreti-na-drvu.html">portreti na drvu</a>.</p>
 
+    <h2 class="text-dark">Kako pripremiti motiv</h2>
+    <p class="text-gray">Možete nam poslati gotov dizajn, fotografiju, logo ili samo opisati ideju. Logotip pošaljite u što većoj kvaliteti, a ako imate vektorsku verziju (npr. PDF ili SVG), priložite i nju. Za tekst nam recite točan natpis i okvirno kako zamišljate izgled slova. Ako želite QR kod, pošaljite poveznicu ili sadržaj koji treba kodirati. Na temelju toga pripremamo prijedlog izrade.</p>
+
+    <h2 class="text-dark">Kako izgleda narudžba</h2>
+    <ol class="text-dark">
+      <li>Pošaljete ideju, fotografiju, dizajn ili logo.</li>
+      <li>Zajedno dogovaramo veličinu, materijal i izgled. Ništa ne ide u izradu dok ne potvrdite da ste zadovoljni pripremom.</li>
+      <li>Slijede izrada i završna obrada.</li>
+      <li>Gotov proizvod pakiramo i šaljemo.</li>
+    </ol>
+
     <h2 class="text-dark">Materijali i završna obrada</h2>
-    <p class="text-gray">Ovisno o proizvodu, koristimo šperploču, MDF i pravo drvo poput hrasta. Nakon graviranja proizvod se lakira radi zaštite i ljepšeg izgleda.</p>
+    <p class="text-gray">Ovisno o proizvodu koristimo šperploču (bukva), MDF i pravo drvo poput hrasta. Svaki materijal nakon graviranja izgleda drukčije, pa vam pri dogovoru objasnimo mogućnosti i ograničenja za odabrani proizvod. Nakon graviranja proizvod se lakira radi zaštite i ljepšeg izgleda.</p>
 
-    <h2 class="text-dark">Personalizacija</h2>
-    <p class="text-gray">Motiv, tekst, ime, datum, logo ili QR kod graviramo prema vašoj želji. Javite nam ideju, a mi ćemo predložiti izgled i mogućnosti za odabrani proizvod.</p>
+    <h2 class="text-dark">Poslovne narudžbe i veće količine</h2>
+    <p class="text-gray">Gravuru loga tvrtke radimo i u većim količinama, npr. za poklone zaposlenicima ili poslovnim partnerima. Prije izrade cijele serije pripremamo prikaz dizajna uz mogućnost dorade. Rok izrade veće narudžbe duži je nego za pojedinačni komad i ovisi o vrsti proizvoda i količini. Više o tome na stranici <a href="personalizirani-pokloni.html">personalizirani i poslovni pokloni</a>.</p>
 
-    <h2 class="text-dark">Rok izrade</h2>
-    <p class="text-gray">Izrada standardno traje 3 do 7 dana.</p>
+    <h2 class="text-dark">Rok izrade, pakiranje i dostava</h2>
+    <p class="text-gray">Standardna izrada traje 3 do 7 dana. Hitne narudžbe u pravilu ne radimo, ali javite nam željeni rok pa ćemo vidjeti što je moguće. Proizvode pakiramo za siguran transport i šaljemo poštom po cijeloj Hrvatskoj, u pravilu GLS dostavom. Za neke proizvode moguće je i poklon pakiranje.</p>
 
     <section class="categories container" style="padding:24px 0;">
       <h2 class="text-primary">Pogledajte po proizvodu</h2>
@@ -233,7 +278,7 @@
 
       <div class="faq-item" style="margin-bottom:18px;">
         <h3 style="margin-bottom:4px;">Koji materijali se koriste?</h3>
-        <p class="text-dark">Najčešće koristimo šperploču, MDF i pravo drvo poput hrasta, ovisno o proizvodu, a nakon graviranja proizvod lakiramo.</p>
+        <p class="text-dark">Najčešće koristimo šperploču (bukva), MDF i pravo drvo poput hrasta, ovisno o proizvodu, a nakon graviranja proizvod lakiramo.</p>
       </div>
 
       <div class="faq-item" style="margin-bottom:18px;">
@@ -242,8 +287,28 @@
       </div>
 
       <div class="faq-item" style="margin-bottom:18px;">
+        <h3 style="margin-bottom:4px;">Što trebam poslati za narudžbu?</h3>
+        <p class="text-dark">Dovoljno je poslati fotografiju, dizajn ili logo, ili samo opisati ideju. Zatim zajedno pripremamo prijedlog izrade, a ništa ne ide u izradu dok ne potvrdite da ste zadovoljni.</p>
+      </div>
+
+      <div class="faq-item" style="margin-bottom:18px;">
+        <h3 style="margin-bottom:4px;">Radite li gravuru loga tvrtke u većim količinama?</h3>
+        <p class="text-dark">Da, radimo i veće količine, npr. za poklone zaposlenicima ili poslovnim partnerima. Prije izrade cijele serije pripremamo prikaz dizajna uz mogućnost dorade, a rok izrade je duži nego kod pojedinačnih komada.</p>
+      </div>
+
+      <div class="faq-item" style="margin-bottom:18px;">
         <h3 style="margin-bottom:4px;">Koliko traje izrada?</h3>
-        <p class="text-dark">Izrada standardno traje 3 do 7 dana.</p>
+        <p class="text-dark">Standardna izrada traje 3 do 7 dana. Veće narudžbe traju duže, a hitne u pravilu ne radimo, ali javite nam željeni rok pa ćemo vidjeti što je moguće.</p>
+      </div>
+
+      <div class="faq-item" style="margin-bottom:18px;">
+        <h3 style="margin-bottom:4px;">Šaljete li po cijeloj Hrvatskoj?</h3>
+        <p class="text-dark">Da, šaljemo poštom po cijeloj Hrvatskoj, u pravilu GLS dostavom. Proizvodi se pakiraju za siguran transport, a poklon pakiranje moguće je za neke proizvode.</p>
+      </div>
+
+      <div class="faq-item" style="margin-bottom:18px;">
+        <h3 style="margin-bottom:4px;">Mogu li vratiti ili reklamirati proizvod?</h3>
+        <p class="text-dark">Da. Ako niste zadovoljni primljenim proizvodom, možete ga vratiti ili reklamirati.</p>
       </div>
     </section>
 
@@ -257,6 +322,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© PyroprintDamir 2021 | <a href="mailto:pyroprint.damir@gmail.com">pyroprint.damir@gmail.com</a></p>
+      <p class="footer-legal"><a href="politika-privatnosti.html">Politika privatnosti</a> · <a href="#" class="cookie-settings-link">Postavke kolačića</a></p>
       <a href="https://www.facebook.com/share/17HiwMozvU/" target="_blank" rel="noopener">Facebook</a>
       <a href="https://www.instagram.com/pyroprint.damir" target="_blank" rel="noopener">Instagram</a>
     </div>
