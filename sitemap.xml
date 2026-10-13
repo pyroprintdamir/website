@@ -27,12 +27,12 @@
 </url>
 <url>
   <loc>https://pyroprintdamir.hr/personalizirani-pokloni</loc>
-  <lastmod>2026-10-12</lastmod>
+  <lastmod>2026-10-13</lastmod>
   <priority>0.85</priority>
 </url>
 <url>
   <loc>https://pyroprintdamir.hr/3d-drvene-karte</loc>
-  <lastmod>2026-10-05</lastmod>
+  <lastmod>2026-10-13</lastmod>
   <priority>0.85</priority>
 </url>
 <url>
@@ -42,7 +42,7 @@
 </url>
 <url>
   <loc>https://pyroprintdamir.hr/satovi</loc>
-  <lastmod>2026-10-05</lastmod>
+  <lastmod>2026-10-13</lastmod>
   <priority>0.85</priority>
 </url>
 <url>
@@ -57,8 +57,18 @@
 </url>
 <url>
   <loc>https://pyroprintdamir.hr/blog/</loc>
-  <lastmod>2026-10-05</lastmod>
+  <lastmod>2026-10-13</lastmod>
   <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://pyroprintdamir.hr/blog/poklon-od-drva-za-godisnjicu-braka</loc>
+  <lastmod>2026-10-13</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://pyroprintdamir.hr/blog/pokloni-od-drva-vjencanje-krstenje-pricest</loc>
+  <lastmod>2026-10-13</lastmod>
+  <priority>0.70</priority>
 </url>
 <url>
   <loc>https://pyroprintdamir.hr/blog/sto-se-sve-moze-lasersko-gravirati</loc>
@@ -84,5 +94,10 @@
   <loc>https://pyroprintdamir.hr/politika-privatnosti</loc>
   <lastmod>2026-10-05</lastmod>
   <priority>0.30</priority>
+</url>
+<url>
+  <loc>https://pyroprintdamir.hr/uvjeti-narudzbe</loc>
+  <lastmod>2026-10-13</lastmod>
+  <priority>0.40</priority>
 </url>
 </urlset>

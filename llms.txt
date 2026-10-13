@@ -15,11 +15,14 @@
 
 - [O nama](https://pyroprintdamir.hr/onama): misija i filozofija — kvaliteta, pouzdanost i individualni pristup klijentu.
 - [Galerija radova](https://pyroprintdamir.hr/galerija): portreti, gravirani satovi, 3D drvene karte i personalizirani pokloni iz dosadašnje izrade.
+- [Uvjeti narudžbe](https://pyroprintdamir.hr/uvjeti-narudzbe): plaćanje, rokovi, dostava, preuzimanje u Rupi, reklamacije.
 - [Kontakt](https://pyroprintdamir.hr/kontakt): forma i e-mail za upite, narudžbe i ponude.
 
 ## Blog
 
 - [Pirografija: Kad Vatra Urezuje Portret Duše u Drvo](https://pyroprintdamir.hr/blog/pirografija-portret-duse): o umjetnosti pirografije i izradi portreta na drvetu.
+- [Poklon od drva za godišnjicu braka: 6 ideja s gravurom](https://pyroprintdamir.hr/blog/poklon-od-drva-za-godisnjicu-braka): ideje za poklon za godišnjicu — 3D karta, sat, portret para, gravirana daska.
+- [Pokloni od drva za vjenčanje, krštenje i prvu pričest](https://pyroprintdamir.hr/blog/pokloni-od-drva-vjencanje-krstenje-pricest): ideje za personalizirane drvene poklone za vjenčanje, krštenje i pričest.
 - [Što se sve može laserski gravirati?](https://pyroprintdamir.hr/blog/sto-se-sve-moze-lasersko-gravirati): pregled materijala pogodnih za lasersko graviranje — drvo, staklo, koža, metal.
 - [Personalizacija kao Umjetnost](https://pyroprintdamir.hr/blog/personalizacija-kao-umetnost): o vrijednosti personaliziranih poklona.
 - [Laserska Magija Preciznosti](https://pyroprintdamir.hr/blog/laserska-magija-preciznosti): o preciznosti laserskog graviranja i izradi 3D drvenih karata.
