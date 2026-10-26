@@ -28,6 +28,10 @@
   <meta name="description" content="Pročitajte savjete i priče o laserskom graviranju, pirografiji i personaliziranim poklonima na Pyroprint Damir blogu.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://pyroprintdamir.hr/blog/">
+  <script>
+  /* Stari URL-ovi (?post=slug) -> čisti URL (/blog/slug) */
+  (function(){var m=location.search.match(/^\?post=([a-z0-9-]+)$/);if(m){location.replace('/blog/'+m[1]);}})();
+  </script>
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Blog | Pyroprint Damir">
