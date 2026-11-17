@@ -1,0 +1,128 @@
+# Objava cjenika (NN 132/2026). Pokreće se ISKLJUČIVO ručno: Actions -> Cjenik -> Run workflow.
+# Izvor podataka i skripte su na grani `cjenik-izvor`; `main` dobiva samo generirane datoteke (jednim commitom).
+# Nema push/schedule okidača, pa nema petlji. Commit koji napravi ovaj workflow ne pokreće nove workflowe.
+# NE stavljati [skip ci] / [skip netlify] u poruke commitova: Netlify bi preskočio objavu.
+# Dva odvojena posla: "samo-provjera" ima SAMO pravo čitanja (ne može pisati u repozitorij),
+# pravo pisanja ima isključivo posao "objavi".
+name: Cjenik
+
+on:
+  workflow_dispatch:
+    inputs:
+      nacin:
+        description: "samo-provjera = ništa se ne objavljuje; objavi = commit na main i Netlify deploy"
+        type: choice
+        options:
+          - samo-provjera
+          - objavi
+        default: samo-provjera
+      izvor_commit:
+        description: "Neobavezno: puni SHA commita grane cjenik-izvor koji je prošao 'samo-provjera' (prazno = zadnji commit grane)"
+        type: string
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cjenik-objava
+  cancel-in-progress: false
+
+env:
+  TZ: Europe/Zagreb
+
+jobs:
+  provjera:
+    if: github.ref == 'refs/heads/main' && inputs.nacin == 'samo-provjera'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Main (stranica)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: site
+          persist-credentials: false
+
+      - name: Izvor cjenika i skripte (grana cjenik-izvor)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.izvor_commit || 'cjenik-izvor' }}
+          path: izvor
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Izvor mora biti na grani cjenik-izvor
+        run: |
+          git -C izvor fetch --quiet origin cjenik-izvor
+          git -C izvor merge-base --is-ancestor HEAD FETCH_HEAD
+          echo "Izvor (cjenik-izvor) commit: $(git -C izvor rev-parse HEAD)"
+          echo "Izvor (cjenik-izvor) commit: $(git -C izvor rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Samo provjera (ništa se ne commita)
+        run: python3 izvor/objava.py provjera --repo site --izvor izvor --izlaz "$RUNNER_TEMP/izlaz"
+
+      - name: Generirane datoteke za pregled
+        uses: actions/upload-artifact@v4
+        with:
+          name: cjenik-pregled
+          path: ${{ runner.temp }}/izlaz
+          if-no-files-found: ignore
+
+      - name: Sažetak - uspjeh
+        if: success()
+        run: |
+          echo "### Cjenik: provjera prošla (ništa nije objavljeno)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Sažetak - NEUSPJEH
+        if: failure()
+        run: |
+          echo "### Cjenik: provjera NIJE prošla (ništa nije objavljeno). Pogledaj korak koji je pao." >> "$GITHUB_STEP_SUMMARY"
+
+  objava:
+    if: github.ref == 'refs/heads/main' && inputs.nacin == 'objavi'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    steps:
+      - name: Main (stranica)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: site
+
+      - name: Izvor cjenika i skripte (grana cjenik-izvor)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.izvor_commit || 'cjenik-izvor' }}
+          path: izvor
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Izvor mora biti na grani cjenik-izvor
+        run: |
+          git -C izvor fetch --quiet origin cjenik-izvor
+          git -C izvor merge-base --is-ancestor HEAD FETCH_HEAD
+          echo "Izvor (cjenik-izvor) commit: $(git -C izvor rev-parse HEAD)"
+          echo "Izvor (cjenik-izvor) commit: $(git -C izvor rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Provjera + objava na main
+        run: python3 izvor/objava.py objavi --repo site --izvor izvor --potvrdi --poruka "Cjenik objava (workflow ${{ github.run_number }})"
+
+      - name: Provjera javne stranice nakon Netlify deploya
+        run: python3 izvor/objava.py live --repo site --izvor izvor --cekaj 600
+
+      - name: Sažetak - uspjeh
+        if: success()
+        run: |
+          echo "### Cjenik: USPJEH - objavljeno i provjereno na javnoj stranici" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Sažetak - NEUSPJEH
+        if: failure()
+        run: |
+          echo "### Cjenik: NEUSPJEH - objava NIJE potvrđena" >> "$GITHUB_STEP_SUMMARY"
+          echo "Pogledaj korak koji je pao. Ako je commit već otišao na main, a provjera nakon deploya nije prošla, u Netlifyju (Deploys) vrati prethodni deploy ('Publish deploy')." >> "$GITHUB_STEP_SUMMARY"
