@@ -1,0 +1,4 @@
+# Generirano skriptom generiraj_cjenike.py - ne uređivati ručno.
+# Stabilne adrese aktualnih cjenika (rewrite, bez preusmjeravanja).
+/cjenici/roba.csv  /cjenici/98345923_ZA_SVA_PRODAJNA_MJESTA_ROBA_1_20261117_1515.csv  200
+/cjenici/usluge.csv  /cjenici/98345923_ZA_SVA_PRODAJNA_MJESTA_USLUGA_1_20261117_1515.csv  200

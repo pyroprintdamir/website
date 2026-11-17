@@ -15,6 +15,7 @@
 
 - [O nama](https://pyroprintdamir.hr/onama): misija i filozofija — kvaliteta, pouzdanost i individualni pristup klijentu.
 - [Galerija radova](https://pyroprintdamir.hr/galerija): portreti, gravirani satovi, 3D drvene karte i personalizirani pokloni iz dosadašnje izrade.
+- [Cjenik](https://pyroprintdamir.hr/cjenik): početne cijene najčešćih radova s baznim cijenama; sve se izrađuje po narudžbi, konačna cijena dolazi u individualnoj ponudi.
 - [Uvjeti narudžbe](https://pyroprintdamir.hr/uvjeti-narudzbe): plaćanje, rokovi, dostava, preuzimanje u Rupi, reklamacije.
 - [Kontakt](https://pyroprintdamir.hr/kontakt): forma i e-mail za upite, narudžbe i ponude.
 

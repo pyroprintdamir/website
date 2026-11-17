@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7XLZSRZ4M8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  // Consent Mode v2 - zadano odbijeno dok korisnik ne prihvati kolačiće
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+
+  // Povratni posjetitelj koji je već prihvatio kolačiće: pristanak se vraća prije prvog slanja podataka
+  try { if (localStorage.getItem('pd_cookie_consent') === 'granted') { gtag('consent', 'update', { 'analytics_storage': 'granted' }); } } catch (e) {}
+
+  gtag('js', new Date());
+  gtag('config', 'G-7XLZSRZ4M8');
+</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Cjenik | Pyroprint Damir</title>
+  <meta name="description" content="Početne cijene portreta na drvu, drvenih satova, 3D karata, hrastovih dasaka i laserskog graviranja, uz bazne cijene. Sve izrađujemo po narudžbi.">
+  
+  <link rel="canonical" href="https://pyroprintdamir.hr/cjenik">
+
+  <meta property="og:title" content="Cjenik – Pyroprint Damir">
+  <meta property="og:description" content="Početne i bazne cijene najčešćih radova PyroprintDamir. Sve se izrađuje po narudžbi.">
+  <meta property="og:image" content="https://pyroprintdamir.hr/images/seo-slika.webp">
+  <meta property="og:url" content="https://pyroprintdamir.hr/cjenik">
+
+  <style>
+  :root{
+    --primary:#6A89A7;--secondary:#88BDF2;--accent:#BDDDFC;
+    --dark:#384959;--bg:#ffffff;--muted:#6b7280;--max-w:1100px
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Poppins',system-ui,-apple-system,Arial;background:var(--bg);color:var(--dark);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .container{max-width:var(--max-w);margin:0 auto;padding:24px}
+  .site-header{background:var(--bg);position:sticky;top:0;z-index:50;box-shadow:0 2px 8px rgba(56,73,89,0.06)}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--dark)}
+  .logo{width:64px;height:64px;border-radius:10px;object-fit:contain;padding:6px}
+  .brand-text{font-weight:700;font-size:18px}
+  .slogan-small{font-size:12px;color:var(--muted)}
+  .nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-weight:600}
+  .hero{padding:48px 0;display:flex;align-items:center;gap:32px;border-bottom:1px solid rgba(56,73,89,0.04)}
+  .hero-inner{display:flex;gap:32px;align-items:center;justify-content:space-between}
+  .hero-text h1{font-size:38px;margin:0;color:var(--primary)}
+  .slogan{color:var(--secondary);font-weight:700;margin-bottom:10px}
+  .lead{color:var(--muted);margin-bottom:18px}
+  .hero-image img{width:420px;max-width:40vw;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,0.06)}
+  .cta{display:inline-block;padding:12px 18px;border-radius:14px;text-decoration:none;font-weight:700;cursor:pointer}
+  .btn-primary{background:linear-gradient(180deg,var(--primary),var(--secondary));color:#fff;border:none}
+  .btn-outline{background:transparent;color:var(--primary);border:2px solid var(--secondary)}
+  @media (max-width:900px){
+    .hero-inner{flex-direction:column-reverse;text-align:center}
+    .hero-image img{max-width:80vw}
+  }
+  
+  .featured-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));gap:14px;margin-top:18px}
+  .featured-grid a{display:block;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.08);transition:transform .15s}
+  .featured-grid a:hover{transform:translateY(-3px)}
+  .featured-grid img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+  .table-scroll{overflow-x:auto}
+  .price-table{width:100%;border-collapse:collapse;margin:8px 0 24px;table-layout:fixed}
+  .price-table thead th:nth-child(1){width:46%}.price-table thead th:nth-child(2){width:20%}.price-table thead th:nth-child(3){width:34%}
+  .price-table th,.price-table td{padding:12px 10px;text-align:left;vertical-align:top;border-bottom:1px solid rgba(56,73,89,0.12)}
+  .price-table thead th{background:rgba(189,221,252,0.45);color:var(--dark);font-weight:700}
+  .price-table tbody th{font-weight:600;color:var(--dark)}
+  .price-table td{white-space:normal}
+  .baza-datum{display:block;font-size:0.85rem;color:var(--muted)}
+  .price-note{background:rgba(189,221,252,0.35);border-radius:12px;padding:16px 18px;margin:8px 0 24px}
+  .price-note p{margin:0 0 8px}.price-note p:last-child{margin:0}
+  .price-individual{margin:0 0 24px}
+  .csv-links{padding-left:20px;word-break:break-all}
+  @media (max-width:600px){
+    .price-table,.price-table tbody,.price-table tr,.price-table th,.price-table td{display:block;width:100%}
+    .price-table thead{position:absolute;left:-9999px}
+    .price-table tr{border:1px solid rgba(56,73,89,0.15);border-radius:12px;padding:10px 12px;margin-bottom:12px}
+    .price-table th,.price-table td{border:none;padding:4px 0}
+    .price-table tbody th{font-size:1rem;margin-bottom:4px}
+    .price-table{table-layout:auto}
+    .price-table td{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+    .price-table td::before{content:attr(data-label);font-weight:600;color:var(--muted);flex:0 0 auto}
+    .price-table td .v{text-align:right}
+  }
+  </style>
+
+  <link rel="preload" href="fonts/poppins-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="preload" href="css/style.css?v=20261012" as="style">
+  <link rel="stylesheet" href="css/style.css?v=20261012" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/style.css?v=20261012"></noscript>
+
+  <link rel="icon" type="image/png" href="images/favicon.png"><link rel="apple-touch-icon" href="images/favicon-180.png">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="images/logo.webp" width="1130" height="1130" alt="Pyroprint Damir" class="logo">
+        <div class="brand-text-wrap">
+          <span class="brand-text">PyroprintDamir</span>
+          <span class="slogan-small">Od ideje do uspomene</span>
+        </div>
+      </a>
+      <nav class="nav" id="main-navigation">
+        <a href="index.html">Početna</a>
+        <a href="onama.html">O nama</a>
+        <a href="galerija.html">Galerija</a>
+        <a href="cjenik.html">Cjenik</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="blog/index.html">Blog</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Meni" aria-controls="main-navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+<main class="container content">
+    <h1 class="text-primary">Cjenik</h1>
+
+    <section class="featured container" style="padding:8px 0 24px;">
+      <h2 class="text-primary">Primjeri izrade</h2>
+      <div class="featured-grid">
+        <a href="images/39.webp"><img src="images/thumbs/39.webp" width="900" height="900" fetchpriority="high" decoding="async" alt="Gravirani portret bebe s imenom, pirografija na drvu"></a>
+        <a href="images/12.webp"><img src="images/thumbs/12.webp" width="773" height="900" loading="lazy" decoding="async" alt="Sat, Velekem, antracit boja, 30cm"></a>
+        <a href="images/1.webp"><img src="images/thumbs/1.webp" width="900" height="900" loading="lazy" decoding="async" alt="3D drvena karta, Šibenski arhipelag"></a>
+        <a href="images/46.webp"><img src="images/thumbs/46.webp" width="900" height="900" loading="lazy" decoding="async" alt="Daska za rezanje s ilustracijom i natpisom"></a>
+        <a href="images/56.webp"><img src="images/thumbs/56.webp" width="900" height="458" loading="lazy" decoding="async" alt="Drveni putokaz s gravurom adrese i prezimena obitelji"></a>
+      </div>
+      <p style="text-align:center;margin-top:20px;">
+        <a class="cta btn-outline" href="galerija.html">Pogledajte cijelu galeriju</a>
+      </p>
+    </section>
+
+    <p class="text-dark">Svi proizvodi izrađuju se po narudžbi i prema vašim željama. U nastavku su početne cijene najčešćih radova, uz baznu cijenu. Konačnu cijenu dobivate u ponudi prije potvrde narudžbe.</p>
+
+    <!-- TABLICA:START -->
+      <h2 class="text-dark" style="margin-top:28px">Proizvodi</h2>
+      <div class="table-scroll"><table class="price-table">
+        <thead><tr><th scope="col">Proizvod ili usluga</th><th scope="col">Cijena</th><th scope="col">Bazna cijena</th></tr></thead>
+        <tbody>
+            <tr><th scope="row" data-label="Proizvod ili usluga">Portret na drvu A4</th><td data-label="Cijena"><span class="v">od 45,00 €</span></td><td data-label="Bazna cijena"><span class="v">od 45,00 € <span class="baza-datum">(cijena na dan 10. 9. 2026.)</span></span></td></tr>
+            <tr><th scope="row" data-label="Proizvod ili usluga">Portret na drvu A3</th><td data-label="Cijena"><span class="v">od 60,00 €</span></td><td data-label="Bazna cijena"><span class="v">od 60,00 € <span class="baza-datum">(cijena na dan 10. 9. 2026.)</span></span></td></tr>
+            <tr><th scope="row" data-label="Proizvod ili usluga">Personalizirani drveni sat Ø30 cm – laserska gravura</th><td data-label="Cijena"><span class="v">od 30,00 €</span></td><td data-label="Bazna cijena"><span class="v">od 30,00 € <span class="baza-datum">(cijena na dan 10. 9. 2026.)</span></span></td></tr>
+            <tr><th scope="row" data-label="Proizvod ili usluga">Personalizirani drveni sat Ø30 cm – u boji</th><td data-label="Cijena"><span class="v">od 40,00 €</span></td><td data-label="Bazna cijena"><span class="v">od 40,00 € <span class="baza-datum">(cijena na dan 10. 9. 2026.)</span></span></td></tr>
+            <tr><th scope="row" data-label="Proizvod ili usluga">3D slojevita karta, približno 30–40 cm</th><td data-label="Cijena"><span class="v">od 65,00 €</span></td><td data-label="Bazna cijena"><span class="v">od 65,00 € <span class="baza-datum">(cijena na dan 10. 9. 2026.)</span></span></td></tr>
+            <tr><th scope="row" data-label="Proizvod ili usluga">Hrastova daska, debljine 26–28 mm (bez graviranja)</th><td data-label="Cijena"><span class="v">od 30,00 €</span></td><td data-label="Bazna cijena"><span class="v">od 30,00 € <span class="baza-datum">(cijena na dan uvođenja u ponudu: 17. 11. 2026.)</span></span></td></tr>
+        </tbody>
+      </table></div>
+      <h2 class="text-dark" style="margin-top:28px">Usluge</h2>
+      <div class="table-scroll"><table class="price-table">
+        <thead><tr><th scope="col">Proizvod ili usluga</th><th scope="col">Cijena</th><th scope="col">Bazna cijena</th></tr></thead>
+        <tbody>
+            <tr><th scope="row" data-label="Proizvod ili usluga">Lasersko graviranje</th><td data-label="Cijena"><span class="v">od 8,00 €</span></td><td data-label="Bazna cijena"><span class="v">od 8,00 € <span class="baza-datum">(cijena na dan uvođenja u ponudu: 17. 11. 2026.)</span></span></td></tr>
+        </tbody>
+      </table></div>
+      <p class="price-individual"><strong>Ostali personalizirani proizvodi</strong>: prema individualnoj ponudi.</p>
+      <!-- TABLICA:END -->
+
+    <div class="price-note">
+      <p><strong>Konačna cijena</strong> ovisi o dimenzijama, materijalu, motivu, grafičkoj pripremi, završnoj obradi i drugim zahtjevima. Prije potvrde narudžbe šaljemo individualnu ponudu s konačnom cijenom. Graviranje se naplaćuje zasebno.</p>
+      <p><strong>Bazna cijena</strong> je cijena koju smo primjenjivali 10. rujna 2026. Za radove koje smo u ponudu uveli kasnije, bazna cijena je cijena na dan kada su prvi put bili u ponudi, a taj je datum naveden uz cijenu.</p>
+      <p>Fotografije na stranici prikazuju ranije izrađene radove, a ne gotove artikle na zalihi.</p>
+    </div>
+
+    <h2 class="text-dark">Cjenik u strojno čitljivom obliku</h2>
+    <p class="text-gray">Isti cjenik dostupan je kao CSV datoteka (UTF-8, razdjelnik točka-zarez), zasebno za robu i za usluge.</p>
+    <!-- CSVLINKS:START -->
+      <ul class="csv-links">
+      <li><strong>Roba</strong>: <a href="cjenici/roba.csv">cjenici/roba.csv</a> (stalna adresa, uvijek aktualni cjenik)<br><span class="baza-datum">datoteka: <a href="cjenici/98345923_ZA_SVA_PRODAJNA_MJESTA_ROBA_1_20261117_1515.csv">98345923_ZA_SVA_PRODAJNA_MJESTA_ROBA_1_20261117_1515.csv</a></span></li>
+      <li><strong>Usluge</strong>: <a href="cjenici/usluge.csv">cjenici/usluge.csv</a> (stalna adresa, uvijek aktualni cjenik)<br><span class="baza-datum">datoteka: <a href="cjenici/98345923_ZA_SVA_PRODAJNA_MJESTA_USLUGA_1_20261117_1515.csv">98345923_ZA_SVA_PRODAJNA_MJESTA_USLUGA_1_20261117_1515.csv</a></span></li>
+      </ul>
+      <!-- CSVLINKS:END -->
+
+    <section class="contact-cta" style="margin-top:32px;">
+      <h2 class="cta-title text-primary">Imate ideju?</h2>
+      <p class="cta-subtext">Pošaljite upit — javit ćemo vam mogućnosti i ponudu s cijenom.</p>
+      <a class="cta btn-primary" href="kontakt.html">Pošaljite upit</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© PyroprintDamir 2021 | <a href="mailto:pyroprint.damir@gmail.com">pyroprint.damir@gmail.com</a></p>
+      <p class="footer-legal"><a href="cjenik.html">Cjenik</a> · <a href="uvjeti-narudzbe.html">Uvjeti narudžbe</a> · <a href="politika-privatnosti.html">Politika privatnosti</a> · <a href="#" class="cookie-settings-link">Postavke kolačića</a></p>
+      <a href="https://www.facebook.com/share/17HiwMozvU/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/pyroprint.damir" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js?v=20261012"></script>
+</body>
+</html>
