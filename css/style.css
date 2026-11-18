@@ -624,3 +624,12 @@ img{max-width:100%;height:auto;display:block}
 .form-status.ok{color:#1a7f37}
 .form-status.err{color:#b42318}
 .cf-turnstile{margin:8px 0 12px}
+
+/* ---------- RASKID UGOVORA (isti izgled kao kontakt forma) ---------- */
+.raskid-form{max-width:500px;margin-top:30px;background:#f9f9f9;padding:30px;border-radius:var(--radius);box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+.raskid-form label{display:block;margin-bottom:15px;font-weight:600;color:var(--dark)}
+.raskid-form input[type="text"],.raskid-form input[type="email"],.raskid-form input[type="tel"],.raskid-form input[type="date"],.raskid-form textarea{width:100%;padding:10px;margin-top:5px;border:1px solid #ddd;border-radius:8px;box-sizing:border-box;font-family:inherit;font-size:1rem}
+.raskid-form fieldset{border:0;margin:0 0 15px;padding:0}
+.raskid-form fieldset label{font-weight:400}
+.raskid-form button{min-height:44px;cursor:pointer;border:none;font-size:1.1rem;padding:12px 18px;margin-top:10px;border-radius:14px}
+.raskid-form [hidden],#raskid-gotovo[hidden]{display:none!important}

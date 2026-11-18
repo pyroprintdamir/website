@@ -97,7 +97,7 @@
 </url>
 <url>
   <loc>https://pyroprintdamir.hr/politika-privatnosti</loc>
-  <lastmod>2026-10-05</lastmod>
+  <lastmod>2026-11-18</lastmod>
   <priority>0.30</priority>
 </url>
 <url>
@@ -107,7 +107,17 @@
 </url>
 <url>
   <loc>https://pyroprintdamir.hr/uvjeti-narudzbe</loc>
-  <lastmod>2026-10-13</lastmod>
+  <lastmod>2026-11-18</lastmod>
   <priority>0.40</priority>
 </url>
+  <url>
+    <loc>https://pyroprintdamir.hr/pisani-prigovori</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://pyroprintdamir.hr/raskid-ugovora</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.30</priority>
+  </url>
 </urlset>
